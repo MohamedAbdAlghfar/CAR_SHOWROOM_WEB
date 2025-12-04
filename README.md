@@ -40,7 +40,7 @@ A full-featured **Laravel web application** for managing car listings, users, ad
 ## Installation
 
 ### 1. Clone Repository
-#### git clone [(https://github.com/MohamedAbdAlghfar/CAR_SHOWROOM_WEB.git)]https://github.com/MohamedAbdAlghfar/CAR_SHOWROOM_WEB.git
+#### git clone [(https://github.com/MohamedAbdAlghfar/CAR_SHOWROOM_WEB.git)](https://github.com/MohamedAbdAlghfar/CAR_SHOWROOM_WEB.git)
 #### cd car-management
 
 ### 2. Install Dependencies
