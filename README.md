@@ -1,66 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Car Management & Payment System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured **Laravel web application** for managing car listings, users, admins, and car purchases. This project includes **Paymob payment integration**, allowing users to securely buy cars online. It provides separate user and admin dashboards to manage cars, users, orders, and logs efficiently.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### User Features
+- View cars by brand.
+- Edit user profile.
+- Purchase cars using **Paymob**.
+- All user actions protected with authentication.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Admin Features
+- Admin dashboard.
+- Create, edit, and delete users.
+- Create, edit, and delete admins.
+- Create, edit, and delete cars.
+- View purchase orders.
+- View car logs.
 
-## Learning Laravel
+### Payment Integration
+- Complete **Paymob** integration.
+- Callback endpoint to verify and finalize payments.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Technologies Used
+- Laravel 10  
+- PHP  
+- MySQL  
+- Blade Templates  
+- Paymob Payment Gateway  
+- Laravel Authentication  
+- Git & GitHub  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clone Repository
+git clone https://github.com/yourusername/car-management.git
+cd car-management
 
-### Premium Partners
+### 2. Install Dependencies
+composer install
+npm install
+npm run build
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 3. Create Environment File
+cp .env.example .env
+php artisan key:generate
+
+Update `.env`:
+
+Database:
+DB_DATABASE=your_db
+DB_USERNAME=your_user
+DB_PASSWORD=your_password
+
+Paymob:
+PAYMOB_API_KEY=your_paymob_api_key
+PAYMOB_INTEGRATION_ID=your_integration_id
+PAYMOB_IFRAME_ID=your_iframe_id
+
+### 4. Run Migrations
+php artisan migrate
+
+### 5. Start Development Server
+php artisan serve
+Visit:
+http://localhost:8000
+
+
+---
+
+## Project Structure
+
+- **Routes:** All defined inside `routes/web.php`
+- **Controllers:**
+  - `User/` → car viewing, profile editing, Paymob payments  
+  - `Admin/` → car management, user/admin management, logs  
+  - Payment handling in `PaymentController`
+- **Views:** Located in `resources/views`
+- **Payments:** Paymob checkout + callback integration
+
+---
+
+## Usage
+
+1. Register or log in.
+2. Users browse cars by brand and purchase using Paymob.
+3. Admin manages users, admins, cars, and orders.
+4. Payment status updates automatically through Paymob callback.
+
+---
+
+## Notes
+
+- Ensure your Paymob credentials are correct in `.env`
+- All routes are protected using Laravel `auth` middleware
+- Admin and user routes are separated for proper role control
+
+---
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Fork the repository  
+2. Create a feature branch  
+3. Commit changes  
+4. Push and open a Pull Request  
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the **MIT License**.
