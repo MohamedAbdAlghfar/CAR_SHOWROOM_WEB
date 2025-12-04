@@ -1,4 +1,4 @@
-# Car Management & Payment System
+# Car Showroom Web & Payment System
 
 A full-featured **Laravel web application** for managing car listings, users, admins, and car purchases. This project includes **Paymob payment integration**, allowing users to securely buy cars online. It provides separate user and admin dashboards to manage cars, users, orders, and logs efficiently.
 
@@ -40,36 +40,37 @@ A full-featured **Laravel web application** for managing car listings, users, ad
 ## Installation
 
 ### 1. Clone Repository
-git clone https://github.com/yourusername/car-management.git
-cd car-management
+#### git clone https://github.com/yourusername/car-management.git
+#### cd car-management
 
 ### 2. Install Dependencies
-composer install
-npm install
-npm run build
+#### composer install
+#### npm install
+#### npm run build
 
 ### 3. Create Environment File
-cp .env.example .env
-php artisan key:generate
+#### cp .env.example .env
+#### php artisan key:generate
 
 Update `.env`:
 
 Database:
-DB_DATABASE=your_db
-DB_USERNAME=your_user
-DB_PASSWORD=your_password
+#### DB_DATABASE=Car_ShowRoom
+#### DB_USERNAME=root
+#### DB_PASSWORD=
 
 Paymob:
-PAYMOB_API_KEY=your_paymob_api_key
-PAYMOB_INTEGRATION_ID=your_integration_id
-PAYMOB_IFRAME_ID=your_iframe_id
+#### PAYMOB_API_KEY=ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TVRFd05UWTVOU3dpYm1GdFpTSTZJbWx1YVhScFlXd2lmUS5qZE0ta2dQc1N0Nk0za3U0M0VCaWJVU0UwVzU3SjBGUC1iVGdfMHpBWENqbWZTbjhYTTNhUElVREk4VGQ2bG96ZFA3ZHBzTE1FanZQTGFfVFgyU3R2Zw==
+#### PAYMOB_INTEGRATION_ID=5398443
+#### PAYMOB_IFRAME_ID=979419
+#### PAYMOB_HMAC=A96CF6AB9A030A8287AE2DDCAABC2F0B
 
 ### 4. Run Migrations
-php artisan migrate
+#### php artisan migrate
 
 ### 5. Start Development Server
-php artisan serve
-Visit:
+#### php artisan serve
+#### Visit:
 http://localhost:8000
 
 
